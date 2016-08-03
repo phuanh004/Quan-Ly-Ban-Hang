@@ -16,6 +16,7 @@ function OpenConnection(){
 }
 function ReadData(){
     try {
+        OpenConnection();
 //        $conn = OpenConnection();
         echo 'success';
 //        $tsql = "SELECT [CompanyName] FROM SalesLT.Customer";
