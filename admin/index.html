@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title></title>
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
+    <link href="../css/table.css" rel="stylesheet">
+</head>
+<body>
+<nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+        <!--                <a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>-->
+        <a id="logo-container" href="#" class="brand-logo teal-text">QUẢN LÝ BÁN HÀNG</a>
+
+        <ul class="right hide-on-med-and-down">
+            <li class="teal-text">Xin chào, admin</li>
+            <li><a class="waves-effect waves-red btn">Đăng Xuất</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row">.
+        <div class="col s12">
+                <ul class="tabs">
+                    <li class="tab col s3"><a class="active teal-text" href="#tabKhachHang">Khách Hàng</a></li>
+                    <li class="tab col s3"><a class="teal-text" href="#tabLoaiSanPham">Loại Sản Phẩm</a></li>
+                    <li class="tab col s3"><a class="teal-text" href="#tabSanPham">Sản Phẩm</a></li>
+                    <li class="tab col s3"><a class="teal-text" href="#tabHoaDon">Hóa Đơn</a></li>
+                    <li class="tab col s3"><a class="teal-text" href="#tabChiTietHoaDon">Chi Tiết Hóa Đơn</a></li>
+                </ul>
+        </div>
+        <div id="tabKhachHang" class="col s12">
+            <div class="row">
+                <div class="col s12">
+                    <div class="card material-table">
+                        <div class="table-header">
+                            <span class="table-title">Bảng Khách Hàng</span>
+                            <div class="actions">
+                                <a href="#modalThemKhachHang" class="modal-trigger waves-effect btn-flat nopadding"><i class="material-icons">playlist_add</i></a>
+                                <a href="#" class="search-toggle waves-effect btn-flat nopadding"><i class="material-icons">search</i></a>
+                            </div>
+                        </div>
+                        <table class="highlight bang" id="bangKhachHang">
+                            <thead>
+                                <tr>
+                                    <th>Mã khách hàng</th>
+                                    <th>Tên khách hàng</th>
+                                    <th>Địa chỉ</th>
+                                    <th>Số điện thoại</th>
+                                </tr>
+                            </thead>
+                            <tbody id="khachhang">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tabLoaiSanPham" class="col s12">
+            <div class="row">
+                <div class="col s12">
+                    <div class="card material-table">
+                        <div class="table-header">
+                            <span class="table-title">Bảng Loại Sản Phẩm</span>
+                            <div class="actions">
+                                <a href="#modalThemLoaiSanPham" class="modal-trigger waves-effect btn-flat nopadding"><i class="material-icons">playlist_add</i></a>
+                                <a href="#" class="search-toggle waves-effect btn-flat nopadding"><i class="material-icons">search</i></a>
+                            </div>
+                        </div>
+                        <table class="highlight bang" id="bangLoaiSanPham">
+                            <thead>
+                                <tr>
+                                    <th>Mã loại sản phẩm</th>
+                                    <th>Tên loại sản phẩm</th>
+                                </tr>
+                            </thead>
+                            <tbody id="loaisanpham">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tabSanPham" class="col s12">
+            <div class="row">
+                <div class="col s12">
+                    <div class="card material-table">
+                        <div class="table-header">
+                            <span class="table-title">Bảng Sản Phẩm</span>
+                            <div class="actions">
+                                <a href="#modalThemSanPham" class="modal-trigger waves-effect btn-flat nopadding"><i class="material-icons">playlist_add</i></a>
+                                <a href="#" class="search-toggle waves-effect btn-flat nopadding"><i class="material-icons">search</i></a>
+                            </div>
+                        </div>
+                        <table class="highlight bang" id="bangSanPham">
+                            <thead>
+                                <tr>
+                                    <th>Mã sản phẩm</th>
+                                    <th>Tên sản phẩm</th>
+                                    <th>Số lượng</th>
+                                    <th>Mô tả</th>
+                                    <th>Mã loại sản phẩm</th>
+                                </tr>
+                            </thead>
+                            <tbody id="sanpham">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tabHoaDon" class="col s12">
+            <div class="row">
+                <div class="col s12">
+                    <div class="card material-table">
+                        <div class="table-header">
+                            <span class="table-title">Bảng Hóa Đơn</span>
+                            <div class="actions">
+                                <a href="#modalThemHoaDon" class="modal-trigger waves-effect btn-flat nopadding"><i class="material-icons">playlist_add</i></a>
+                                <a href="#" class="search-toggle waves-effect btn-flat nopadding"><i class="material-icons">search</i></a>
+                            </div>
+                        </div>
+                        <table class="highlight bang" id="bangHoaDon">
+                            <thead>
+                                <tr>
+                                    <th>Mã hóa đơn</th>
+                                    <th>Ngày lập</th>
+                                    <th>Mã Khách Hàng</th>
+                                </tr>
+                            </thead>
+                            <tbody id="hoadon">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tabChiTietHoaDon" class="col s12">
+            <div class="row">
+                <div class="col s12">
+                    <div class="card material-table">
+                        <div class="table-header">
+                            <span class="table-title">Bảng Chi Tiết Hóa Đơn</span>
+                            <div class="actions">
+                                <a href="#modalThemChiTietHoaDon" class="modal-trigger waves-effect btn-flat nopadding"><i class="material-icons">playlist_add</i></a>
+                                <a href="#" class="search-toggle waves-effect btn-flat nopadding"><i class="material-icons">search</i></a>
+                            </div>
+                        </div>
+                        <table class="highlight bang" id="bangChiTietHoaDon">
+                            <thead>
+                                <tr>
+                                    <th>Mã hóa đơn</th>
+                                    <th>Mã sản phẩm</th>
+                                    <th>Số lượng</th>
+                                    <th>Giá</th>
+                                </tr>
+                            </thead>
+                            <tbody id="chitiethoadon">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- MODAL -->
+
+<div id="modalThemKhachHang" class="modal modal-fixed-footer">
+    <div class="modal-content">
+        <h4>Quản lý Khách Hàng</h4>
+        <div class="row">
+            <form class="col s12" id="formThemKhachHang">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="maKH" type="text" class="validate">
+                        <label for="maKH">Mã Khách Hàng</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="tenKH" type="text" class="validate">
+                        <label for="tenKH">Tên Khách Hàng</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="diaChi" type="text" class="validate">
+                        <label for="diaChi">Địa Chỉ</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="sdt" type="number" class="validate">
+                        <label for="sdt">Số Điện Thoại</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <span id="btnThemKhachHang" class="modal-action modal-close waves-effect waves-green btn">Thêm</span>
+        <span id="btnXoaKhachHang" class="modal-action modal-close btn red waves-effect disabled">Xóa</span>
+        <span id="btnLuuKhachHang" class="modal-action modal-close waves-effect waves-green btn-flat">Lưu</span>
+    </div>
+</div>
+
+<div id="modalThemLoaiSanPham" class="modal modal-fixed-footer">
+    <div class="modal-content">
+        <h4>Quản lý Loại Sản Phẩm </h4>
+        <div class="row">
+            <form class="col s12" id="formThemLoaiSanPham">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="maLSP" type="text" class="validate">
+                        <label for="maLSP">Mã Loại Sản Phẩm</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="tenLSP" type="text" class="validate">
+                        <label for="tenLSP">Tên Loại Sản Phẩm</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <span id="btnThemLoaiSanPham" class="modal-action modal-close waves-effect waves-green btn">Thêm</span>
+        <span id="btnXoaLoaiSanPham" class="modal-action modal-close btn red waves-effect disabled">Xóa</span>
+        <span id="btnLuuLoaiSanPham" class="modal-action modal-close waves-effect waves-green btn-flat">Lưu</span>
+    </div>
+</div>
+
+<div id="modalThemSanPham" class="modal modal-fixed-footer">
+    <div class="modal-content">
+        <h4>Quản lý Sản Phẩm</h4>
+        <div class="row">
+            <form class="col s12" id="formThemSanPham">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="maSP" type="text" class="validate">
+                        <label for="maSP">Mã Sản Phẩm</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="tenSP" type="text" class="validate">
+                        <label for="tenSP">Tên Sản Phẩm</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="soLuong" type="number" class="validate">
+                        <label for="soLuong">Số lượng</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="moTa" type="text" class="validate">
+                        <label for="moTa">Mô tả</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <select id="selectMaLSP">
+                        </select>
+                        <label>Mã loại sản phẩm</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <span id="btnThemSanPham" class="modal-action modal-close waves-effect waves-green btn">Thêm</span>
+        <span id="btnXoaSanPham" class="modal-action modal-close btn red waves-effect disabled">Xóa</span>
+        <span id="btnLuuSanPham" class="modal-action modal-close waves-effect waves-green btn-flat">Lưu</span>
+    </div>
+</div>
+
+<div id="modalThemHoaDon" class="modal modal-fixed-footer">
+    <div class="modal-content">
+        <h4>Quản lý Hóa Đơn</h4>
+        <div class="row">
+            <form class="col s12" id="formThemSanPham">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="maHD" type="text" class="validate">
+                        <label for="maHD">Mã Hóa Đơn</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <!-- <label for="ngayLap">Ngày Lập</label> -->
+                        <input id="ngayLap" placeholder="Ngày lập hóa đơn" type="date" class="datepicker">
+                    </div>
+                    <div class="input-field col s12">
+                        <select id="selectMaKH">
+                            <option value="" disabled selected>Chọn mã khách hàng</option>
+                        </select>
+                        <label>Mã Khách hàng</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <span id="btnThemHoaDon" class="modal-action modal-close waves-effect waves-green btn">Thêm</span>
+        <span id="btnXoaHoaDon" class="modal-action modal-close btn red waves-effect disabled">Xóa</span>
+        <span id="btnLuuHoaDon" class="modal-action modal-close waves-effect waves-green btn-flat">Lưu</span>
+    </div>
+</div>
+
+<div id="modalThemChiTietHoaDon" class="modal modal-fixed-footer">
+    <div class="modal-content">
+        <h4>Quản lý Chi Tiết Hóa Đơn</h4>
+        <div class="row">
+            <form class="col s12" id="formThemChiTietHoaDon">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <select id="selectMaHD">
+                            <option value="" disabled selected>Chọn mã hóa đơn</option>
+                        </select>
+                        <label>Mã hóa đơn</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <select id="selectMaSP">
+                            <option value="" disabled selected>Chọn mã sản phẩm</option>
+                        </select>
+                        <label>Mã sản phẩm</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="soLuongHD" type="number" class="validate">
+                        <label for="soLuongHD">Số lượng</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="gia" type="number" step="0.01" class="validate">
+                        <label for="gia">Giá</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <span id="btnThemChiTietHoaDon" class="modal-action modal-close waves-effect waves-green btn">Thêm</span>
+        <span id="btnXoaChiTietHoaDon" class="modal-action modal-close btn red waves-effect disabled">Xóa</span>
+        <span id="btnLuuChiTietHoaDon" class="modal-action modal-close waves-effect waves-green btn-flat">Lưu</span>
+    </div>
+</div>
+
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/query.dataTables.min.js"></script>
+<script type="text/javascript" src="../js/materialize.min.js"></script>
+<script type="text/javascript" src="../js/table.js"></script>
+<script type="text/javascript" src="../js/admin.js"></script>
+<!-- <script type="text/javascript" src="../js/admin.js"></script> -->
+</body>
+</html>
