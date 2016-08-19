@@ -1,8 +1,8 @@
 <?php
-    $servername = "http://phuanh004.southeastasia.cloudapp.azure.com";
+    $servername = "localhost";
     $username = "root";
-    $password = "113113";
-    $database = "vietanime";
+    $password = "mysql";
+    $database = "QuanLyBanHang";
     $dbport = 3306;
     //
     //    // Create connection

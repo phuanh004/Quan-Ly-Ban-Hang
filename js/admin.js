@@ -320,10 +320,52 @@ function Update(id){
 			});
 			break;
 		case 'Sản Phẩm':
+			$('#btnLuuSanPham').click(function() {
+				if(!$(this).hasClass('disabled')){
+					var nMaSP = $('#maSP').val();
+					var tenSP = $('#tenSP').val();
+					var soLuong = $('#soLuong').val();
+					var moTa = $('#moTa').val();
+					var maLSP = $('#selectMaLSP').val();
+
+					$.get('queries.php', {method: "update", table:"SanPham", maSP: id, nMaSP: nMaSP, tenSP: tenSP, soLuong: soLuong, moTa:moTa, maLSP: maLSP},
+					 function(data) {
+						Materialize.toast(data, 4000);
+						Reload();
+					});
+				}
+			});
 			break;
 		case 'Hóa Đơn':
+			$('#btnLuuHoaDon').click(function() {
+				if(!$(this).hasClass('disabled')){
+					var nMaHD = $('#maHD').val();
+					var ngayLap = $('#ngayLap').val();
+					var maKH = $('#selectMaKH').val();
+
+					$.get('queries.php', {method: "update", table:"HoaDon", maHD: id, nMaSP: nMaSP, ngayLap: ngayLap, maKH: maKH},
+					 function(data) {
+						Materialize.toast(data, 4000);
+						Reload();
+					});
+				}
+			});
 			break;
 		case 'Chi Tiết Hóa Đơn':
+			$('#btnLuuChiTietHoaDon').click(function() {
+				if(!$(this).hasClass('disabled')){
+					var nMaHD = $('#selectMaHD').val();
+					var maSP = $('#selectMaSP').val();
+					var soLuongHD = $('#soLuongHD').val();
+					var gia = $('#gia').val();
+
+					$.get('queries.php', {method: "update", table:"ChiTietHoaDon", maHD: id, nMaHD: nMaHD, maSP: maSP, soLuong: soLuongHD, gia: gia},
+					 function(data) {
+						Materialize.toast(data, 4000);
+						Reload();
+					});
+				}
+			});
 			break;
 	}
 }

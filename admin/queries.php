@@ -192,6 +192,37 @@
 			    }
 			    mysqli_close($db);
 				break;
+			case 'HoaDon':
+				$maHD = $_GET['maHD'];
+				$newMaHD = $_GET['nMaHD'];
+				$ngayLap = $_GET['ngayLap'];
+				$maKH = $_GET['maKH'];
+
+				$sql = "UPDATE $table SET MaHD = '$newMaHD', NgayLap = '$ngayLap', MaKH = '$maKH' WHERE MaHD = '$maHD';";
+				echo $sql;
+				if (mysqli_query($db, $sql)) {
+			        echo "Cập nhật thành công !";
+			    } else {
+			        echo "Lỗi: " . $sql . "<br>" . mysqli_error($db);
+			    }
+			    mysqli_close($db);
+				break;
+			case 'ChiTietHoaDon':
+				$maHD = $_GET['maHD'];
+				$newMaHD = $_GET['nMaHD'];
+				$maSP = $_GET['maSP'];
+				$soLuong = $_GET['soLuong'];
+				$gia = $_GET['gia'];
+
+				$sql = "UPDATE $table SET maHD = '$newMaHD', maSP = '$maSP', soLuong = '$soLuong', gia = '$gia' WHERE MaHD = '$maHD';";
+				echo $sql;
+				if (mysqli_query($db, $sql)) {
+			        echo "Cập nhật thành công !";
+			    } else {
+			        echo "Lỗi: " . $sql . "<br>" . mysqli_error($db);
+			    }
+			    mysqli_close($db);
+				break;
 			default:
 				# code...
 				break;
